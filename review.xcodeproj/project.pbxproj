@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA63CDDD1A197294005E7AB1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA63CDDC1A197294005E7AB1 /* NotificationCenter.framework */; };
+		AA63CDE21A197294005E7AB1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA63CDE11A197294005E7AB1 /* TodayViewController.swift */; };
+		AA63CDE41A197295005E7AB1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA63CDE31A197295005E7AB1 /* MainInterface.storyboard */; };
+		AA63CDE71A197295005E7AB1 /* vanguard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA63CDDA1A197294005E7AB1 /* vanguard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAAA08D01A1971F8005945EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA08CF1A1971F8005945EB /* AppDelegate.swift */; };
 		AAAA08D21A1971F8005945EB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA08D11A1971F8005945EB /* MasterViewController.swift */; };
 		AAAA08D41A1971F8005945EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA08D31A1971F8005945EB /* DetailViewController.swift */; };
@@ -17,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA63CDE51A197295005E7AB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAAA08C21A1971F8005945EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA63CDD91A197294005E7AB1;
+			remoteInfo = vanguard;
+		};
 		AAAA08E21A1971F8005945EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AAAA08C21A1971F8005945EB /* Project object */;
@@ -26,7 +37,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AA63CDEB1A197295005E7AB1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AA63CDE71A197295005E7AB1 /* vanguard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		AA63CDDA1A197294005E7AB1 /* vanguard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = vanguard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA63CDDC1A197294005E7AB1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		AA63CDE01A197294005E7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA63CDE11A197294005E7AB1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		AA63CDE31A197295005E7AB1 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		AAAA08CA1A1971F8005945EB /* review.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = review.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAA08CE1A1971F8005945EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAAA08CF1A1971F8005945EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +71,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AA63CDD71A197294005E7AB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA63CDDD1A197294005E7AB1 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAAA08C71A1971F8005945EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,11 +96,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA63CDDB1A197294005E7AB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA63CDDC1A197294005E7AB1 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA63CDDE1A197294005E7AB1 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				AA63CDE11A197294005E7AB1 /* TodayViewController.swift */,
+				AA63CDE31A197295005E7AB1 /* MainInterface.storyboard */,
+				AA63CDDF1A197294005E7AB1 /* Supporting Files */,
+			);
+			name = Review;
+			path = vanguard;
+			sourceTree = "<group>";
+		};
+		AA63CDDF1A197294005E7AB1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA63CDE01A197294005E7AB1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		AAAA08C11A1971F8005945EB = {
 			isa = PBXGroup;
 			children = (
 				AAAA08CC1A1971F8005945EB /* review */,
 				AAAA08E41A1971F8005945EB /* reviewTests */,
+				AA63CDDE1A197294005E7AB1 /* Review */,
+				AA63CDDB1A197294005E7AB1 /* Frameworks */,
 				AAAA08CB1A1971F8005945EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +139,7 @@
 			children = (
 				AAAA08CA1A1971F8005945EB /* review.app */,
 				AAAA08E11A1971F8005945EB /* reviewTests.xctest */,
+				AA63CDDA1A197294005E7AB1 /* vanguard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +186,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AA63CDD91A197294005E7AB1 /* vanguard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA63CDEA1A197295005E7AB1 /* Build configuration list for PBXNativeTarget "vanguard" */;
+			buildPhases = (
+				AA63CDD61A197294005E7AB1 /* Sources */,
+				AA63CDD71A197294005E7AB1 /* Frameworks */,
+				AA63CDD81A197294005E7AB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vanguard;
+			productName = vanguard;
+			productReference = AA63CDDA1A197294005E7AB1 /* vanguard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		AAAA08C91A1971F8005945EB /* review */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAAA08EB1A1971F8005945EB /* Build configuration list for PBXNativeTarget "review" */;
@@ -125,10 +210,12 @@
 				AAAA08C61A1971F8005945EB /* Sources */,
 				AAAA08C71A1971F8005945EB /* Frameworks */,
 				AAAA08C81A1971F8005945EB /* Resources */,
+				AA63CDEB1A197295005E7AB1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AA63CDE61A197295005E7AB1 /* PBXTargetDependency */,
 			);
 			name = review;
 			productName = review;
@@ -162,6 +249,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Jonathan Yen";
 				TargetAttributes = {
+					AA63CDD91A197294005E7AB1 = {
+						CreatedOnToolsVersion = 6.1;
+					};
 					AAAA08C91A1971F8005945EB = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -186,11 +276,20 @@
 			targets = (
 				AAAA08C91A1971F8005945EB /* review */,
 				AAAA08E01A1971F8005945EB /* reviewTests */,
+				AA63CDD91A197294005E7AB1 /* vanguard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AA63CDD81A197294005E7AB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA63CDE41A197295005E7AB1 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAAA08C81A1971F8005945EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +310,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AA63CDD61A197294005E7AB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA63CDE21A197294005E7AB1 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AAAA08C61A1971F8005945EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +339,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AA63CDE61A197295005E7AB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA63CDD91A197294005E7AB1 /* vanguard */;
+			targetProxy = AA63CDE51A197295005E7AB1 /* PBXContainerItemProxy */;
+		};
 		AAAA08E31A1971F8005945EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AAAA08C91A1971F8005945EB /* review */;
@@ -259,6 +371,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AA63CDE81A197295005E7AB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = vanguard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA63CDE91A197295005E7AB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = vanguard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		AAAA08E91A1971F8005945EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -342,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = review/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = review/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +533,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA63CDEA1A197295005E7AB1 /* Build configuration list for PBXNativeTarget "vanguard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA63CDE81A197295005E7AB1 /* Debug */,
+				AA63CDE91A197295005E7AB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		AAAA08C51A1971F8005945EB /* Build configuration list for PBXProject "review" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -411,6 +557,7 @@
 				AAAA08ED1A1971F8005945EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAAA08EE1A1971F8005945EB /* Build configuration list for PBXNativeTarget "reviewTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +566,7 @@
 				AAAA08F01A1971F8005945EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

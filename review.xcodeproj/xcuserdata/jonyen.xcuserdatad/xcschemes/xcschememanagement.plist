@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>vanguard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AA63CDD91A197294005E7AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AAAA08C91A1971F8005945EB</key>
 		<dict>
 			<key>primary</key>
