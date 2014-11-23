@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var bodyText: UITextView!
-
+    
     var titleItem: AnyObject? {
         didSet {
             self.configureView()
@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
     }
 
     func configureView() {
+        self.automaticallyAdjustsScrollViewInsets = false
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
             if let label = self.bodyText {
@@ -35,10 +36,11 @@ class DetailViewController: UIViewController {
         if let detail: AnyObject = self.titleItem {
             if let label = self.titleText {
                 label.text = detail.description
+
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,7 +51,6 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

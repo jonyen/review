@@ -12,8 +12,11 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = NSMutableArray()
-
-
+    
+    var currentCard: Int = 0
+    
+    var notificationCenter = NSNotificationCenter.defaultCenter()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -33,6 +36,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
+        notificationCenter.addObserver(self, selector: "titleTextDidChange:", name: UITextFieldTextDidChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "bodyTextDidChange:", name: UITextViewTextDidChangeNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,22 +50,55 @@ class MasterViewController: UITableViewController {
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
+    
+    func titleTextDidChange(notification: NSNotification) {
+        println("notification1")
+        println((notification.object as UITextField).text)
+        self.detailViewController?.titleItem = (notification.object as UITextField).text
+    }
+    
+    
+    func bodyTextDidChange(notification: NSNotification) {
+        println("notification2")
+        println((notification.object as UITextView).text)
+        self.detailViewController?.detailItem = (notification.object as UITextView).text
+    }
+    
+    @IBAction func updateTable(sender: AnyObject?) {
+        println("updating table")
+        println("title: ")
+        println(self.detailViewController?.titleItem)
+//        println(source.titleItem)
+        println("body: ")
+        println(self.detailViewController?.detailItem)
+    }
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+                println(cell.textLabel.text)
+                self.currentCard = indexPath.row
                 let object = objects[indexPath.row] as NSDate
                 let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-                controller.titleItem = "New Card " + String(objects.count - indexPath.row)
+//                let title = "New Card " + String(objects.count - indexPath.row)
+                let title = cell.textLabel.text
+                controller.titleItem = title
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
+                let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "updateTable:")
+                controller.navigationItem.rightBarButtonItem = doneButton
+                self.detailViewController?.titleItem = title
+                self.detailViewController?.detailItem = object
             }
         }
+        println("segueing")
+        println(segue.identifier)
     }
-
+    
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -11,6 +11,7 @@
 		AA63CDE21A197294005E7AB1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA63CDE11A197294005E7AB1 /* TodayViewController.swift */; };
 		AA63CDE41A197295005E7AB1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA63CDE31A197295005E7AB1 /* MainInterface.storyboard */; };
 		AA63CDE71A197295005E7AB1 /* vanguard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA63CDDA1A197294005E7AB1 /* vanguard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA63CDED1A199ADB005E7AB1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA63CDEC1A199ADB005E7AB1 /* Default-568h@2x.png */; };
 		AAAA08D01A1971F8005945EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA08CF1A1971F8005945EB /* AppDelegate.swift */; };
 		AAAA08D21A1971F8005945EB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA08D11A1971F8005945EB /* MasterViewController.swift */; };
 		AAAA08D41A1971F8005945EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA08D31A1971F8005945EB /* DetailViewController.swift */; };
@@ -57,6 +58,7 @@
 		AA63CDE01A197294005E7AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA63CDE11A197294005E7AB1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		AA63CDE31A197295005E7AB1 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		AA63CDEC1A199ADB005E7AB1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AAAA08CA1A1971F8005945EB /* review.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = review.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAA08CE1A1971F8005945EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAAA08CF1A1971F8005945EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		AAAA08C11A1971F8005945EB = {
 			isa = PBXGroup;
 			children = (
+				AA63CDEC1A199ADB005E7AB1 /* Default-568h@2x.png */,
 				AAAA08CC1A1971F8005945EB /* review */,
 				AAAA08E41A1971F8005945EB /* reviewTests */,
 				AA63CDDE1A197294005E7AB1 /* Review */,
@@ -254,6 +257,7 @@
 					};
 					AAAA08C91A1971F8005945EB = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 7PZN69YDL4;
 					};
 					AAAA08E01A1971F8005945EB = {
 						CreatedOnToolsVersion = 6.1;
@@ -295,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAAA08D71A1971F8005945EB /* Main.storyboard in Resources */,
+				AA63CDED1A199ADB005E7AB1 /* Default-568h@2x.png in Resources */,
 				AAAA08DC1A1971F8005945EB /* LaunchScreen.xib in Resources */,
 				AAAA08D91A1971F8005945EB /* Images.xcassets in Resources */,
 			);
