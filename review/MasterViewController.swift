@@ -11,6 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
+    var titles = NSMutableArray()
     var objects = NSMutableArray()
     
     var currentCard: Int = 0
@@ -46,51 +47,38 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        objects.insertObject(NSDate(), atIndex: 0)
+        objects.insertObject("Start typing here...", atIndex: 0)
+        titles.insertObject(objects.count, atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
     func titleTextDidChange(notification: NSNotification) {
-        println("notification1")
-        println((notification.object as UITextField).text)
         self.detailViewController?.titleItem = (notification.object as UITextField).text
+        titles[self.currentCard] = (notification.object as UITextField).text
+        let cell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow() as NSIndexPath!) as UITableViewCell!
+        cell.textLabel.text = (notification.object as UITextField).text
     }
     
     
     func bodyTextDidChange(notification: NSNotification) {
-        println("notification2")
-        println((notification.object as UITextView).text)
         self.detailViewController?.detailItem = (notification.object as UITextView).text
+        objects[self.currentCard] = (notification.object as UITextView).text
     }
     
-    @IBAction func updateTable(sender: AnyObject?) {
-        println("updating table")
-        println("title: ")
-        println(self.detailViewController?.titleItem)
-//        println(source.titleItem)
-        println("body: ")
-        println(self.detailViewController?.detailItem)
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-                println(cell.textLabel.text)
                 self.currentCard = indexPath.row
-                let object = objects[indexPath.row] as NSDate
+                let object = objects[indexPath.row] as String
                 let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-//                let title = "New Card " + String(objects.count - indexPath.row)
-                let title = cell.textLabel.text
+                let title = titles[indexPath.row] as String
                 controller.titleItem = title
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
-                let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "updateTable:")
-                controller.navigationItem.rightBarButtonItem = doneButton
                 self.detailViewController?.titleItem = title
                 self.detailViewController?.detailItem = object
             }
@@ -112,9 +100,10 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        let object = objects[indexPath.row] as NSDate
+        let object = objects[indexPath.row] as String
         //cell.textLabel.text = object.description
         cell.textLabel.text = "New Card " + String(objects.count)
+        titles[indexPath.row] = "New Card " + String(objects.count)
         return cell
     }
 
